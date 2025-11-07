@@ -1,31 +1,40 @@
 import java.util.Scanner;
 
-public class Pruebas {
+
+public class Pruebas{
     public static void main(String[] args) {
-        System.out.println("----Bienvenido al experimento del Cálculo 2----");
         Scanner sc = new Scanner(System.in);
+       while (true) {
+           System.out.println("--Bienvenido al Experimento Cálculo de Divisas--");
+           System.out.println("Introduce una cantidad");
+           double numero = sc.nextDouble();
 
-        System.out.println("Introduce el primer número");
-        int a = sc.nextInt();
-        System.out.println("Introduce el segundo número");
-        int b = sc.nextInt();
+           System.out.println("1.Convertir a Dólares");
+           System.out.println("2.Convertir a Libras esterlinas");
+           System.out.println("3.Convertir a Yenes");
 
-        //La fórmula para decir si algo es par es %2==0, y para saber si es impar es %2!=0
-        if (a % 2 == 0 && b % 2 == 0) {
-            System.out.println("Son pares");
-        }
-        if (a > (2 * b) && a < 8){
-            System.out.println("El número " + a + " es más grande que el doble de " + b + " y menor que 8");
-        }
-        else {
-            System.out.println(" No coinciden");
-        }
-        if (a == b || (a - b) < 0)
-        {
-            System.out.println(a + " es igual que " + b + " o la resta de ambos es menor que 0");
-        }
-        else{
-            System.out.println(" No coinciden");
-        }
+           int opcion = sc.nextInt();
+           if (opcion == 1) {
+               double conversion = (numero * 1.15);
+               //con el %.2f lo que haces es limitar el número de decimales y así java lee la variable que pongas después
+               //de la coma para cambiarle a ese formato
+               System.out.printf("Son %.2f $", conversion);
+               continue;
+           }
+           if (opcion == 2) {
+               double conversion = (numero * 0.88);
+               System.out.printf("Son %.2f £", conversion);
+               continue;
+           }
+           if (opcion == 3) {
+               double conversion = (numero * 177);
+               System.out.printf("Son %.2f ¥", conversion);
+               continue;
+           }
+           else {
+               System.out.println("Saliendo del programa");
+               break;
+           }
+       }
     }
 }
