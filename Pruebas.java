@@ -1,18 +1,25 @@
-public class Pruebas {
-public static void main (String[] args) {
-    String frase = "Amor a ROMA";
-    String frasenormal = frase.replace(" ","").toLowerCase();
+import java.util.Scanner;
 
-    String frasedadalavuelta = new StringBuilder(frasenormal).reverse().toString();
+public class Pruebas{
+    public static void main(String[] args) {
+        Scanner pedirnumero = new Scanner(System.in);
+        System.out.println("--------Bienvenido al Experimento del Cálculo-------");
+        System.out.println("------introduce el primer número------");
+        int a = pedirnumero.nextInt();
 
-    if (frasenormal.equals(frasedadalavuelta)) {
-        System.out.println("Es palíndroma");
-    } else{
-        System.out.println("No es palíndroma");
+        System.out.println("----introduce el segundo número----");
+        int b = pedirnumero.nextInt();
+
+        System.out.println("--introduce el tercer número--");
+        int c = pedirnumero.nextInt();
+
+       int suma = a+b;
+
+       if (suma == c) {
+           System.out.println("Los dosh primeros números son iguales al tercero");
+       }
+       else if (suma != c){
+           System.out.println("Los dosh primeros números son distintos al tercero");
+       }
     }
-
-    for (int i = 0; i < frase.length(); i++) {
-        System.out.printf("[%02d] %c%n", i, frase.charAt(i));
-    }
-}
 }
